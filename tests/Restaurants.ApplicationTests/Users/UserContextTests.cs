@@ -50,7 +50,7 @@ public class UserContextTests
     }
 
 
-    [Fact(Skip = "This test is temporarily disabled due to a known issue.")]
+    [Fact]
     public void GetCurrentUser_WithUserContextNotPresent_ThrowsInvalidOperationException()
     {
         // Arrange
