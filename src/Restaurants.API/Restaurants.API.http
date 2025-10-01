@@ -1,0 +1,108 @@
+@host = https://localhost
+@port = 7005
+
+@token = CfDJ8Na5tAZ_l3xLlvBpBbKmXDwYWHxxmwxRm2xm7i2x36ILXtO_YBlyOhku91mQfNowPIsfUiBicKyLrYy1jWqY7dNKrmVpWhm3nXRiJMNMogkclFumFZOBT5KUE7WU-AfCwjzdOT7iQg0sqcZkizCqtIzeL_1_S0dAd4xWwufq0OHO2nM78dj_bmmW1thM8VzdnI-or4KjZyuMEzapoPtHMCSX97rKqddZv18EYFoPNvOX8ZPMu47yYQyJEiVvVlg3nkVgeKz6FyTWXyksJlI5ogyVliy8p6OX2R7-av8uUd04suJ2HxQhyC3ArjsQSRUoFQGGlpP3yRVlXrKhcrZgSoNsrLzzAVrFH2U-wgyK3n-hg4uQW2YyrgnIyszVXjeFlS6r_QmWyJJaPSpoTquAI4-leGKh6iB2i6e_n1yI9MleFoM_9jMEXj2FRpE4swKI9NRqRdk1Dn7pL9kS8iSlfCJOP6-wgnKA-P2vTAhFvsTgiQWbdFFq6NiEB9gtGy0GrMcKNRUV4nA5_zkC_U6MMcha4ynf1OQCdXlj58OlJrHMU_uzXXfsRM-MCT1ovegJDCN6kkpnelnKuCVyjjH5eEejcpViZcn0xK0uwJB_b52o8w7afQTlJuzME5hri0hC5YPjiyYgSEvYvD9B-apfklrxDT0ik53V2L50yrTPx1SjlhuNjWgo_e5OYpmF07C2Bt9IuJkFAJ88R8_mJTJm-ybqbQ1Xn_r_lKQaWqmxI0TzcowNDld87xNGFf2aiHX8QgnpUOhZDtVDNHMJoehpWm-ZibwUGwb3pw8g-NoG3MhF
+
+
+@Restaurants.API_HostAddress = https://localhost:7005
+
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants?searchPhrase=WIZA&pageSize=5&pageNumber=2&sortBy=Name&sortdirection=Descending
+Authorization: Bearer {{token}}
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/6
+Authorization: Bearer {{token}}
+###
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/6
+Authorization: Bearer {{token}}
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/3/dishes
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/343/dishes
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/3/dishes/3
+
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/1006
+
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
+Content-Type: application/json
+{
+      "Name": " Tasty55",
+      "Description": "A cozy restaurant serving a variety of delicious dishes.",
+      "Category": "Indian",
+      "HasDelivery": true,
+      "ContactEmail": "info@test.com",
+      "ContactNumber": "555-1234",
+      "City": "New York",
+      "Street": "123 Main Street",
+      "PostalCode": "10-010"
+}
+
+###
+
+GET https://localhost:7005/api/restaurants/1007
+
+
+###
+
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/5
+Authorization: Bearer {{token}}
+Content-Type: application/json
+{
+  "Name": "Rumors",
+  "Description": "This is a sample restaurant description.",
+  "HasDelivery": false
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/31/dishes
+Content-Type: application/json
+
+{
+  "Name": "Spaghetti Bolognese",
+  "Description": "Classic Italian pasta dish with rich meat sauce",
+  "Price": 12.99,
+  "KiloCalories": 750
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/identity/register
+Content-Type: application/json
+{
+  "email": "user@test.com",
+  "password": "Password1!"
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/identity/login
+Content-Type: application/json
+{
+  "email": "owner@test.com",
+  "password": "Password1!"
+}
+###
+
+@restaurantId=1
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{{restaurantId}}/dishes
+Authorization: Bearer {{token}}
+
+###
