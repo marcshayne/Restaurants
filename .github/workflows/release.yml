@@ -62,7 +62,7 @@ jobs:
           name: api-artifact
       - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v2
-        id: deploy-to-webap
+        id: deploy-to-webapp
         with:
           app-name: 'yevid-restaurants-prod'
           publish-profile: ${{ secrets.PUBLISH_PROFILE_PROD}}
